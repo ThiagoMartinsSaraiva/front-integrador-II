@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
           <Input type="password" placeholder="Digite sua senha" name="password" id="password" />
         </div>
         <Button className="w-full mb-4">Entrar</Button>
-        <Button variant='secondary' className="w-full">Esqueci minha senha</Button>
+        <Button variant='secondary' className="w-full" asChild><Link href="password-recovery">Esqueci minha senha</Link></Button>
       </div>
     </main>
   );
