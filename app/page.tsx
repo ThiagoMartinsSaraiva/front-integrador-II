@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
       <div className="z-10 w-1/3 items-center justify-between font-mono text-sm flex flex-col border-2 rounded-lg p-12">
@@ -15,8 +15,8 @@ export default function Home() {
           <Label htmlFor="password">Senha</Label>
           <Input type="password" placeholder="Digite sua senha" name="password" id="password" />
         </div>
-        <Button className="w-full mb-4">Entrar</Button>
-        <Button variant='secondary' className="w-full" asChild><Link href="password-recovery">Esqueci minha senha</Link></Button>
+        <Button className="w-full mb-4" asChild><Link href="/dashboard">Entrar</Link></Button>
+        <Button variant='secondary' className="w-full" asChild><Link href="/password-recovery">Esqueci minha senha</Link></Button>
       </div>
     </main>
   );
