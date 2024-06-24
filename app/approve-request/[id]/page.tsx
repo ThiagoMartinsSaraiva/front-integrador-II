@@ -7,7 +7,11 @@ import { Label } from "@/components/ui/label";
 import { useEffect, useState } from "react";
 import { FaCheck, FaTimes } from "react-icons/fa";
 
-export default function ApproveRequest({ params }) {
+interface IApproveRequest {
+  params: any
+}
+
+export default function ApproveRequest({ params }: IApproveRequest) {
   const { data } = useGlobal()
 
   const [formData, setFormData] = useState({
@@ -79,7 +83,7 @@ export default function ApproveRequest({ params }) {
       return request
     })
 
-    globalData.data.requests = requestToSave
+    globalData.data.requests = requestToSave as any
 
     const objectToSave = {
       ...globalData,

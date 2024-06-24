@@ -5,6 +5,8 @@ interface User {
   requestsCount: number
   arrears: number
   activeRequests: number
+  password: string
+  email: string
 }
 
 interface Item {

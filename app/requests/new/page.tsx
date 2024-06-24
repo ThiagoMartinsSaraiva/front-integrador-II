@@ -81,7 +81,7 @@ export default function NewRequests() {
       return item
     })
 
-    globalData.data.requests = requestsToSave
+    globalData.data.requests = requestsToSave as any
     globalData.data.users = usersToSave
     globalData.data.items = itemsToSave
 

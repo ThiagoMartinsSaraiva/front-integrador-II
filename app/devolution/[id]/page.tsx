@@ -7,7 +7,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useEffect, useState } from "react";
 
-export default function Devolution({ params }) {
+interface IDevolution {
+  params: any
+}
+
+export default function Devolution({ params }: IDevolution) {
   const { data } = useGlobal()
 
   const [formData, setFormData] = useState({
