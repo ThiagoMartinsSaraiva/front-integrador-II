@@ -6,11 +6,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useEffect, useState } from "react";
 
-export default function EditItem({ params }) {
+interface IEditItem {
+  params: any
+}
+
+export default function EditItem({ params }: IEditItem) {
   const [formData, setFormData] = useState({
     name: '',
     type: '',
-    amount: '',
+    amount: 0,
   })
 
   const { data } = useGlobal()
@@ -21,7 +25,7 @@ export default function EditItem({ params }) {
     setFormData({
       name: itemData?.name || '',
       type: itemData?.type || '',
-      amount: itemData?.amount || '',
+      amount: itemData?.amount || 0
     })
   }, [itemData])
 
@@ -42,7 +46,7 @@ export default function EditItem({ params }) {
         return {
           ...item,
           ...formData,
-          amount: Number.parseInt(item.amount)
+          amount: item.amount,
         }
       }
       return item

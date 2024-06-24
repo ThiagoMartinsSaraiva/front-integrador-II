@@ -35,7 +35,7 @@ export default function NewItems() {
       lent: 0,
     }]
 
-    globalData.data.items = itemsToSave
+    globalData.data.items = itemsToSave as any
 
     const objectToSave = {
       ...globalData,

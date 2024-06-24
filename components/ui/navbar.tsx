@@ -25,7 +25,7 @@ export function Navbar() {
     })
     .then(res => res.json())
     .then(res => setData(res))
-  }, [])
+  }, [setData])
 
   useEffect(() => {
     setShouldRender(!pathsUnrendered.includes(pathname))
